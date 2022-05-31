@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+        .input-container{
+            width: 280px;
+            position: relative;
+        }
+        .label{
+            position: absolute;
+            left: 10px;
+            top: 14px;
+            transition: all 0.2s;
+            padding: 0 2px;
+            z-index: 1;
+            color: #b3b3b3;
+            user-select: nome;
+        }
+        .tex-input{
+            padding:0.8rem;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #2f2c45;
+            background: #272530;
+            border-radius: 5px;
+            font-size: 18px;
+            outline: nome;
+            transition all 0.3s;
+            color: #FFF;
+        }
+        .label::before{
+            content: '';
+            height: 5px;
+            background: #272530;
+            position: absolute
+            left:0;
+            top: 10px;
+            width:100%
+            z-index: -1;
+        }
+        .tex-input:focus{
+            border: 2px solid #38f2ff;
+        }
+        .tex-input:focus + .label{
+            top: -10px;
+            color:#38f2ff;
+            font-size: 18px;
+            text-shadow: 1.5px 1px 2px rgb(8,8,8,0.493);
+        }
+        .tex-input::placeholder{
+            font-size: 16px;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        .tex-input:focus::placeholder{
+            opacity: 1;
+        }
+        .tex-input:not(:placeholder-shown) + .label{
+            top: -10px;
+            color: #38f2ff;
+            font-size: 18;
+        }
+    </style>
+</head>
+
+<body>
+<div class="input-container">
+    <input
+            type="text"
+            id="username"
+            class="tex-input"
+            autocomplete="off"
+            placeholder="Digite seu nome"
+    />
+    <label for="username" class="label">Email</label>
+</div>
+</body>
+</html>
+
